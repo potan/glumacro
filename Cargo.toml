@@ -1,0 +1,11 @@
+[package]
+name = "glumacro"
+version = "0.1.0"
+edition = "2018"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+gluon = "0.17"
+syn = "1.0"
