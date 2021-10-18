@@ -1,7 +1,6 @@
 //#![feature(proc_macro_hygiene)]
 
-fn main() {
-    println!("{:?}", glumacro::a_proc_macro!(r#"
+static PRIMES: &'static [i32] = & glumacro::a_proc_macro!(r#"
     let lim = 36
     let array = import! std.array
     let int = import! std.int    
@@ -11,5 +10,8 @@ fn main() {
                                                             then next p
                                                             else array.append [n] (next (\x -> p x || int.rem x n == 0))
     in show (erotosfen 2 (\x -> False))
-    "#));
+    "#);
+
+fn main() {
+    println!("{:?}", PRIMES);
 }
